@@ -35,3 +35,15 @@ Solution :
 	System.out.println("the method name is :"+name);
 	}
 }
+
+Trick 4 :
+Problem Statement :  How to revert to a commit and make it as master copy in GIT
+Solution:
+
+What you need to do to update the remote is to force push your local changes to master:
+
+git checkout master
+git reset --hard e3f1e37
+git push --force origin master
+# Then to prove it (it won't print any diff)
+git diff master..origin/master
