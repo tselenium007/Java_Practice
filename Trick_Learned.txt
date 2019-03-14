@@ -1,0 +1,37 @@
+Trick 1 :
+Problem Statement : Suppose have many .java files like Test1.java, test2.java,Test3.java
+We need to segregate the .class files in separate folder
+
+Solution : Run the javac command as follows
+	1. Create a folder in the directory using mkdir
+		mkdir ClassFiles
+	2. javac -classpath ClassFiles Test1.java test2.java Test3.java
+	3. Running this command creates all the .class files in ClassFiles folder
+
+Trick 2 :
+problem Statement : We have created the ClassFiles Folder and now want to run all the class files in the same line
+
+Solution :
+	java -classpath ClassFiles Test1 & test2 & Test3
+	where & is the concat operatoe at command line to run multiple commands
+
+
+Trick 3 :
+problem Statement : Suppose we want to see which method has been executed like below program
+
+public class Test1 {
+	public void isPrime(){
+	System.out.println("isprime executed");
+	}
+}
+Here we are giving the method name as hard coded. how to resolve this ?
+
+Solution :
+ String name = new Object(){}.getClass().getEnclosingMethod().getName();
+ Now the program becomes :
+ Public class Test1 {
+ 	public void isPrime(){
+	String name = new Object(){}.getClass().getEnclosingMethod().getName();
+	System.out.println("the method name is :"+name);
+	}
+}
