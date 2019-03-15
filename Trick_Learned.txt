@@ -5,7 +5,7 @@ We need to segregate the .class files in separate folder
 Solution : Run the javac command as follows
 	1. Create a folder in the directory using mkdir
 		mkdir ClassFiles
-	2. javac -classpath ClassFiles Test1.java test2.java Test3.java
+	2. javac -d ClassFiles Test1.java test2.java Test3.java
 	3. Running this command creates all the .class files in ClassFiles folder
 
 Trick 2 :
